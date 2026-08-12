@@ -1,4 +1,4 @@
-# sunny.patel — Portfolio
+# Harshit Upadhyay — Portfolio
 
 ## Project Structure
 
