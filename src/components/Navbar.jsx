@@ -15,7 +15,7 @@ export default function Navbar() {
 
       <header className="flex items-center justify-between px-8 md:px-12 py-6 relative z-10">
         <div className="text-lg font-bold tracking-tight text-cream">
-          sunny<span className="text-white/40">.</span>patel Upadhyay
+          Harshit<span className="text-white/40">.</span>Upadhyay
         </div>
 
         <nav className="hidden md:flex items-center gap-10 text-sm text-white/70">

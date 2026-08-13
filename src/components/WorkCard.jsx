@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function WorkCard({
+  slug,
   url,
   title,
   year,
@@ -9,9 +11,8 @@ export default function WorkCard({
   preview,
 }) {
   return (
-    <a href="#" className="group block">
+    <Link to={`/projects/${slug}`} className="group block">
       <div className="border border-white/10 rounded-lg overflow-hidden hover:border-accent/40 transition-colors">
-        {/* browser chrome */}
         <div className="flex items-center gap-2 px-3 py-2.5 border-b border-white/10 bg-white/[0.02]">
           <span className="w-2 h-2 rounded-full bg-white/20" />
           <span className="w-2 h-2 rounded-full bg-white/20" />
@@ -19,13 +20,11 @@ export default function WorkCard({
           <span className="ml-2 text-xs text-white/40 truncate">{url}</span>
         </div>
 
-        {/* preview area */}
         <div className="h-56 relative overflow-hidden bg-[#0d0d10]">
           {preview}
         </div>
       </div>
 
-      {/* meta below card */}
       <div className="flex items-start justify-between mt-4">
         <h3 className="text-xl font-bold text-cream group-hover:text-accent transition-colors">
           {title}
@@ -37,6 +36,6 @@ export default function WorkCard({
         <span className="w-1.5 h-1.5 rounded-full bg-accent" />
         {status}
       </div>
-    </a>
+    </Link>
   );
 }

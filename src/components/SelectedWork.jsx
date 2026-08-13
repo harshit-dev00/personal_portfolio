@@ -1,28 +1,35 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import WorkCard from "./WorkCard.jsx";
+import ATSScreenerPreview from "./previews/ATSScreenerPreview.jsx";
+import SunnifyPreview from "./previews/SunnifyPreview.jsx";
+import NetdashPreview from "./previews/NetdashPreview.jsx";
 
 const works = [
   {
+    slug: "ats-screener",
     url: "ats-screener.vercel.app",
     title: "ATS Screener",
-    subtitle: "Stop guessing. Start scoring.",
-    accentFrom: "#dfe3e8",
-    accentTo: "#aeb4bd",
+    year: "2026",
+    description: "Your resume vs. 6 real enterprise ATS engines",
+    preview: <ATSScreenerPreview />,
   },
   {
+    slug: "sunnify",
     url: "sunnify.vercel.app",
     title: "Sunnify",
-    subtitle: "Spotify downloader",
-    accentFrom: "#7dd3fc",
-    accentTo: "#a78bfa",
+    year: "2024",
+    description: "Spotify playlists to tagged local audio",
+    preview: <SunnifyPreview />,
   },
   {
-    url: "netdash-toolkit.vercel.app",
-    title: "NetDash",
-    subtitle: "Network & developer toolbox",
-    accentFrom: "#1e293b",
-    accentTo: "#334155",
+    slug: "netdash",
+    url: "netdash-toolkit.vercel.app/",
+    title: "Netdash",
+    year: "2025",
+    description: "40+ network tools in one app",
+    preview: <NetdashPreview />,
   },
 ];
 
@@ -38,18 +45,18 @@ export default function SelectedWork() {
         <h2 className="text-4xl md:text-5xl font-extrabold text-cream leading-tight max-w-2xl">
           Things people actually use.
         </h2>
-        <a
-          href="#"
+        <Link
+          to="/projects"
           className="hidden md:flex items-center gap-1 text-sm text-white/60 hover:text-cream transition-colors whitespace-nowrap"
         >
           All projects
           <ArrowUpRight size={14} />
-        </a>
+        </Link>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {works.map((work) => (
-          <WorkCard key={work.url} {...work} />
+          <WorkCard key={work.slug} {...work} />
         ))}
       </div>
     </section>

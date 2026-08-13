@@ -14,10 +14,10 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 mb-14">
         <div>
           <p className="text-lg font-bold text-cream mb-2">
-            sunny<span className="text-white/40">.</span>patel
+            Harshit<span className="text-white/40">.</span>Upadhyay
           </p>
           <p className="text-sm text-accent">
-            Software developer, Greater Toronto Area, Canada
+            Software developer, India
           </p>
         </div>
 
@@ -45,7 +45,7 @@ export default function Footer() {
       </div>
 
       <div className="flex items-center justify-between pt-6 border-t border-white/10 text-xs text-white/40">
-        <span>© 2026 Sunny Patel</span>
+        <span>© 2026 Harshit Upadhyay</span>
 
         <div className="flex items-center gap-4">
           <button
