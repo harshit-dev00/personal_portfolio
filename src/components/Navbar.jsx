@@ -1,35 +1,46 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Search } from "lucide-react";
 
 const navLinks = [
   { label: "Projects", number: "01", to: "/projects" },
   { label: "Work", number: "02", to: "/#work" },
-  { label: "About", number: "03", to: "/#about" },
+  { label: "About", number: "03", to: "/about" },
 ];
 
 export default function Navbar() {
+  const location = useLocation();
+
   return (
     <>
       <div className="h-px w-full bg-white/10 relative z-10" />
 
       <header className="flex items-center justify-between px-8 md:px-12 py-6 relative z-10">
         <Link to="/" className="text-lg font-bold tracking-tight text-cream">
-          sunny<span className="text-white/40">.</span>patel
+          Harshit<span className="text-white/40">.</span>Upadhyay
         </Link>
 
         <nav className="hidden md:flex items-center gap-10 text-sm text-white/70">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              to={link.to}
-              className="relative pb-1 hover:text-cream transition-colors"
-            >
-              <span className="text-white/40 mr-1">{link.number}</span>
-              {link.label}
-              <span className="absolute left-0 -bottom-[1px] h-[2px] w-full bg-accent opacity-60" />
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const active = location.pathname === link.to;
+            return (
+              <Link
+                key={link.label}
+                to={link.to}
+                className={`relative pb-1 transition-colors ${
+                  active ? "text-accent" : "hover:text-cream"
+                }`}
+              >
+                <span className="text-white/40 mr-1">{link.number}</span>
+                {link.label}
+                <span
+                  className={`absolute left-0 -bottom-[1px] h-[2px] w-full bg-accent ${
+                    active ? "opacity-100" : "opacity-60"
+                  }`}
+                />
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-4">
