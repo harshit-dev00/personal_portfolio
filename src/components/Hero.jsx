@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUpRight, Terminal } from "lucide-react";
 import StatusBadge from "./StatusBadge.jsx";
 import HeroImage from "./HeroImage.jsx";
@@ -31,13 +32,13 @@ export default function Hero() {
             See the work
             <ArrowRight size={16} />
           </button>
-          <a
-            href="#"
+          <Link
+            to="/resume"
             className="flex items-center gap-1 text-sm text-white/50 hover:text-cream transition-colors"
           >
             Résumé
             <ArrowUpRight size={14} />
-          </a>
+          </Link>
         </div>
       </div>
 
